@@ -26,8 +26,13 @@ namespace TransferoTeam.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTeamAsync(Team t)
+        public async Task<IActionResult> CreateTeamAsync([FromBody] Team t)
         {
+            if (t == null)
+            {
+                return BadRequest();
+            }
+
             var result = await _teamRepository.AddTeamAsync(t);
             if (result == null)
             {
