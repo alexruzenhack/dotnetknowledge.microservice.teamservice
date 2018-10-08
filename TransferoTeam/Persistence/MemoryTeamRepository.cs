@@ -14,7 +14,7 @@ namespace TransferoTeam.Persistence
         {
             if(teams == null)
             {
-                teams = new List<Team> { new Team("one"), new Team("two") };
+                teams = new List<Team>();
             }
         }
 
