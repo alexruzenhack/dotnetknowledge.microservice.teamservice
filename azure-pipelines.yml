@@ -12,3 +12,9 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
+- script: dotnet test TransferoTeam.Tests
+  displayName: 'dotnet test unitary'
+
+- script: dotnet test TransferoTeam.Tests.Integration
+  displayName: 'dotnet test integration'
