@@ -23,16 +23,6 @@ namespace TransferoTeam.Tests
         }
 
         [Fact]
-        public async void QueryTeamListReturnsCorrectTeams()
-        {
-            var rawTeams = (IEnumerable<Team>)(await _controller.GetAllTeamsAsync() as ObjectResult).Value;
-            List<Team> teams = new List<Team>(rawTeams);
-            Assert.Equal(2, teams.Count);
-            Assert.Equal("one", teams[0].Name);
-            Assert.Equal("two", teams[1].Name);
-        }
-
-        [Fact]
         public async void GetTeamRetrievesTeam()
         {
             string sampleName = "getTeams";
